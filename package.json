@@ -1,0 +1,22 @@
+{
+    "name": "SESS_BS_ID002",
+    "description": "Client Flow",
+    "version": "0.0.1",
+    "dependencies": {
+        "node-red-contrib-cpu": "0.0.4",
+        "node-red-contrib-fs-ops": "1.5.0",
+        "node-red-contrib-influxdb": "0.4.1",
+        "node-red-contrib-os": "0.1.7",
+        "node-red-contrib-stackhero-influxdb-v2": "1.0.1",
+        "node-red-contrib-string": "0.2.2",
+        "node-red-dashboard": "2.23.0",
+        "node-red-node-email": "1.7.8",
+        "node-red-node-pi-gpio": "1.1.1"
+    },
+    "node-red": {
+        "settings": {
+            "flowFile": "flow.json",
+            "credentialsFile": "flow_cred.json"
+        }
+    }
+}
