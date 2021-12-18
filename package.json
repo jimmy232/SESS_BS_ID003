@@ -11,9 +11,7 @@
         "node-red-contrib-string": "0.2.2",
         "node-red-dashboard": "2.23.0",
         "node-red-node-email": "1.7.8",
-        "node-red-node-pi-gpio": "1.1.1",
-        "node-red-contrib-advanced-ping": "1.2.0",
-        "node-red-contrib-modbus": "~5.14.1"
+        "node-red-node-pi-gpio": "1.1.1"
     },
     "node-red": {
         "settings": {
