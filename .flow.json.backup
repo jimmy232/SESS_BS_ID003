@@ -127,22 +127,27 @@
         "id": "4d64fa3d.ad0334",
         "type": "mqtt-broker",
         "name": "",
-        "broker": "tailor.cloudmqtt.com",
-        "port": "10287",
+        "broker": "driver.cloudmqtt.com",
+        "port": "18748",
         "clientid": "",
         "usetls": false,
         "compatmode": false,
+        "protocolVersion": "4",
         "keepalive": "60",
         "cleansession": true,
         "birthTopic": "",
         "birthQos": "0",
         "birthPayload": "",
+        "birthMsg": {},
         "closeTopic": "",
         "closeQos": "0",
         "closePayload": "",
+        "closeMsg": {},
         "willTopic": "",
         "willQos": "0",
-        "willPayload": ""
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
     },
     {
         "id": "7e73cdd4.e0b814",
@@ -3638,7 +3643,7 @@
         "id": "52309cc8.3eae44",
         "type": "inject",
         "z": "98a15ed9.8e1d5",
-        "name": "MoniconPLC-Server004V0.1.5",
+        "name": "MoniconPLC-Server003V0.1.5",
         "props": [
             {
                 "p": "payload"
@@ -3653,7 +3658,7 @@
         "once": true,
         "onceDelay": 0.1,
         "topic": "",
-        "payload": "MoniconPLC-Server004V0.1.5",
+        "payload": "MoniconPLC-Server003V0.1.5",
         "payloadType": "str",
         "x": 170,
         "y": 160,
