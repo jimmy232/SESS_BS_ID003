@@ -1897,7 +1897,7 @@
         "type": "function",
         "z": "be33cc6.affea3",
         "name": "Remote Database",
-        "func": "var output = msg.payload.split(\",\");\nvar topic = msg.topic.split(\"/\");\nlet siteID = global.get(\"siteID\") || \"Site_IDxxx\"\nlet depolys = global.get(\"depolys\") || 0\n\n// var msg1 = { payload : data[0] };   // RSSI\n// var msg2 = { payload : data[1] };   // WiFi Diconnection Counter\n// var msg3 = { payload : data[2] };   // MQTT Diconnection Counter\n// var msg4 = { payload : data[3] };   // Device IP\n\nstructureObject();\n\nreturn msg;\n        \nfunction structureObject() {\n\tmsg.payload = {\n\t\t// You bucket\n\t\t// Optional (it can be defined in the node credentials settings)\n\t\tbucket: 'SESS BS ID001',\n\n\t\t// Precision of timestamp\n\t\t// Optional\n\t\t// Can be `ns` (nanoseconds),\n\t\t//        `us` (microseconds),\n\t\t//        `ms` (milliseconds),\n\t\t//        `s` (seconds).\n\t\t// The default is `ns`\n\t\tprecision: 'ms',\n\n\t\t// Data to send to InfluxDB\n\t\t// Can be an array of objects or only one object\n\t\tdata: [\n\t\t{\n\t\t\tmeasurement: siteID,\n\n\t\t\ttags:{\n\t\t\t\t//Info: msg.topic,\n\t\t\t\tdatabaseID: output[7]\n\t\t\t},\n\n\t\t\tfields: {\n\t\t\t\tRSSI: parseFloat(output[0]),\n\t\t\t\tWIFI_DC: parseFloat(output[1]),\n    \t\t\tMQTT_DC: parseFloat(output[2]),\n    \t\t\tDEVICE_IP: \"\\\"\" + output[3] + \"\\\"\",\n    \t\t\tserialNo: parseFloat(topic[3]),\n    \t\t\tESP_Temp: parseFloat(output[4]),\n    \t\t\ttwentySecLoop: parseFloat(output[5]),\n    \t\t\tTRUC_VERSION: String(output[6]),\n    \t\t\tdatabaseID: String(output[7]),\n    \t\t\tEquipmentID: String(output[8])\n\t\t\t},\n\n\t\t\ttimestamp: Date.now()\n\t\t},\n\t\t]\n\t};\n}",
+        "func": "var output = msg.payload.split(\",\");\nvar topic = msg.topic.split(\"/\");\nlet siteID = global.get(\"siteID\") || \"Site_IDxxx\"\nlet depolys = global.get(\"depolys\") || 0\n\n// var msg1 = { payload : data[0] };   // RSSI\n// var msg2 = { payload : data[1] };   // WiFi Diconnection Counter\n// var msg3 = { payload : data[2] };   // MQTT Diconnection Counter\n// var msg4 = { payload : data[3] };   // Device IP\n\nstructureObject();\n\nreturn msg;\n        \nfunction structureObject() {\n\tmsg.payload = {\n\t\t// You bucket\n\t\t// Optional (it can be defined in the node credentials settings)\n\t\tbucket: 'SESS BS ID001',\n\n\t\t// Precision of timestamp\n\t\t// Optional\n\t\t// Can be `ns` (nanoseconds),\n\t\t//        `us` (microseconds),\n\t\t//        `ms` (milliseconds),\n\t\t//        `s` (seconds).\n\t\t// The default is `ns`\n\t\tprecision: 'ms',\n\n\t\t// Data to send to InfluxDB\n\t\t// Can be an array of objects or only one object\n\t\tdata: [\n\t\t{\n\t\t\tmeasurement: siteID,\n\n\t\t\ttags:{\n\t\t\t\t//Info: msg.topic,\n\t\t\t\tdatabaseID: output[7]\n\t\t\t},\n\n\t\t\tfields: {\n\t\t\t\tRSSI: parseFloat(output[0]),\n\t\t\t\tWIFI_DC: parseFloat(output[1]),\n    \t\t\tMQTT_DC: parseFloat(output[2]),\n    \t\t\tDEVICE_IP: String(output[3]),\n    \t\t\tserialNo: parseFloat(topic[3]),\n    \t\t\tESP_Temp: parseFloat(output[4]),\n    \t\t\ttwentySecLoop: parseFloat(output[5]),\n    \t\t\tTRUC_VERSION: String(output[6]),\n    \t\t\tdatabaseID: String(output[7]),\n    \t\t\tEquipmentID: String(output[8])\n\t\t\t},\n\n\t\t\ttimestamp: Date.now()\n\t\t},\n\t\t]\n\t};\n}",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -2142,8 +2142,7 @@
         "y": 320,
         "wires": [
             [
-                "b6ee6265.1202b",
-                "b06efbe2.39fe38"
+                "b6ee6265.1202b"
             ]
         ]
     },
@@ -7303,6 +7302,7 @@
         "noerr": 0,
         "initialize": "",
         "finalize": "",
+        "libs": [],
         "x": 570,
         "y": 400,
         "wires": [
@@ -7323,6 +7323,7 @@
         "noerr": 0,
         "initialize": "",
         "finalize": "",
+        "libs": [],
         "x": 870,
         "y": 400,
         "wires": [
@@ -7839,41 +7840,8 @@
         "y": 140,
         "wires": [
             [
-                "5e8aba1b.25c0f4",
-                "d214538d.1df7b"
+                "5e8aba1b.25c0f4"
             ]
         ]
-    },
-    {
-        "id": "d214538d.1df7b",
-        "type": "debug",
-        "z": "96e1bdf8.23a17",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 640,
-        "y": 160,
-        "wires": []
-    },
-    {
-        "id": "b06efbe2.39fe38",
-        "type": "debug",
-        "z": "96e1bdf8.23a17",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "false",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 800,
-        "y": 420,
-        "wires": []
     }
 ]
