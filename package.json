@@ -1,5 +1,5 @@
 {
-    "name": "SESS_BS_ID002",
+    "name": "SESS_BS_ID003",
     "description": "Client Flow",
     "version": "0.0.1",
     "dependencies": {
@@ -12,7 +12,8 @@
         "node-red-dashboard": "2.23.0",
         "node-red-node-email": "1.7.8",
         "node-red-node-pi-gpio": "1.1.1",
-        "node-red-contrib-advanced-ping": "1.2.0"
+        "node-red-contrib-advanced-ping": "1.2.0",
+        "node-red-contrib-modbus": "~5.14.1"
     },
     "node-red": {
         "settings": {
